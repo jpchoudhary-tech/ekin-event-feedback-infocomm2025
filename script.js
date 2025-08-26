@@ -2,7 +2,7 @@
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby9qaY9tINqeZEIFYjxrl4f8CSnHHJV3MFFnV7thNvxOJz9sfs1V3VMbysYR6k3GDO2/exec'; 
 
 // Get the form and other elements from the HTML
-const form = document.getElementById('feedback-form');
+const form = document.getElementById('ekin-event-feedback-infocomm2025');
 const submitButton = document.getElementById('submit-btn');
 const formContainer = document.querySelector('.form-container');
 const thankYouMessage = document.getElementById('thank-you-message');
@@ -76,3 +76,4 @@ form.addEventListener('submit', (e) => {
     });
 
 });
+
