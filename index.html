@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Feedback</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-container">
+        <header>
+            <h1>Customer Feedback</h1>
+            <p>We'd love to hear your thoughts!</p>
+        </header>
+
+        <form id="feedback-form">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="Name" required>
+
+            <label for="mobile">Mobile Number</label>
+            <input type="tel" id="mobile" name="MobileNumber" required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="Email" required>
+
+            <label for="city">City</label>
+            <input type="text" id="city" name="City" required>
+
+            <label for="product">Which product/solution did you like most?</label>
+            <select id="product" name="LikedProduct" required>
+                <option value="" disabled selected>-- Please select an option --</option>
+                <option value="Product A">Product A</option>
+                <option value="Solution B">Solution B</option>
+                <option value="Service C">Service C</option>
+                <option value="Other">Other</option>
+            </select>
+            
+            <label>How interested are you in our solutions?</label>
+            <div class="star-rating" id="interest-level">
+                <span class="star" data-value="1">&#9733;</span>
+                <span class="star" data-value="2">&#9733;</span>
+                <span class="star" data-value="3">&#9733;</span>
+                <span class="star" data-value="4">&#9733;</span>
+                <span class="star" data-value="5">&#9733;</span>
+            </div>
+            <input type="hidden" id="interest-level-value" name="InterestLevel" required>
+
+            <label>Overall feedback rating:</label>
+            <div class="star-rating" id="feedback-rating">
+                <span class="star" data-value="1">&#9733;</span>
+                <span class="star" data-value="2">&#9733;</span>
+                <span class="star" data-value="3">&#9733;</span>
+                <span class="star" data-value="4">&#9733;</span>
+                <span class="star" data-value="5">&#9733;</span>
+            </div>
+            <input type="hidden" id="feedback-rating-value" name="FeedbackRating" required>
+            
+            <button type="submit" id="submit-btn">Submit Feedback</button>
+        </form>
+
+        <div id="thank-you-message" class="hidden">
+            <h2>Thank You!</h2>
+            <p>Your feedback has been submitted successfully.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

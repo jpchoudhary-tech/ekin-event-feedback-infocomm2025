@@ -1,0 +1,126 @@
+/* General body styling */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f4f7f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    -webkit-tap-highlight-color: transparent; /* Disable tap highlight on touch devices */
+}
+
+/* Container for the form */
+.form-container {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 3rem; /* Larger font for kiosk */
+    color: #333;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.5rem; /* Larger font for kiosk */
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Form element styling */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 1.4rem; /* Larger font for kiosk */
+    color: #555;
+    text-align: left;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+    width: 100%;
+    padding: 18px;
+    margin-bottom: 25px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1.5rem; /* Larger font for kiosk */
+    box-sizing: border-box; /* Important for padding */
+}
+
+/* Style for the submit button */
+button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.8rem; /* Larger font for kiosk */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+button[type="submit"]:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+
+/* Star Rating Styling */
+.star-rating {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    direction: ltr; /* Ensure stars are left-to-right */
+}
+
+.star {
+    font-size: 4rem; /* Big stars for touch */
+    color: #ddd;
+    cursor: pointer;
+    padding: 0 10px;
+    transition: color 0.2s;
+}
+
+.star.selected,
+.star:hover,
+.star:hover ~ .star {
+    color: #ffc107;
+}
+
+/* Thank you message styling */
+.hidden {
+    display: none;
+}
+
+#thank-you-message {
+    padding: 40px;
+}
+
+#thank-you-message h2 {
+    font-size: 3.5rem;
+    color: #28a745;
+}
+
+#thank-you-message p {
+    font-size: 1.8rem;
+    color: #333;
+}
