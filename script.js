@@ -10,15 +10,13 @@ const thankYouMessage = document.getElementById('thank-you-message');
 // --- Star Rating Logic ---
 document.querySelectorAll('.star-rating').forEach(ratingGroup => {
     const stars = ratingGroup.querySelectorAll('.star');
-    const hiddenInputId = ratingGroup.id + '-value'; // e.g., 'interest-level-value'
+    const hiddenInputId = ratingGroup.id + '-value';
     const hiddenInput = document.getElementById(hiddenInputId);
 
     stars.forEach(star => {
         star.addEventListener('click', () => {
             const value = star.getAttribute('data-value');
-            hiddenInput.value = value; // Set the value on the hidden input
-
-            // Visually update the stars
+            hiddenInput.value = value;
             stars.forEach(s => {
                 s.classList.toggle('selected', s.getAttribute('data-value') <= value);
             });
@@ -28,30 +26,33 @@ document.querySelectorAll('.star-rating').forEach(ratingGroup => {
 
 // --- Form Submission Logic ---
 form.addEventListener('submit', (e) => {
-    e.preventDefault(); // Prevent the form from submitting the traditional way
+    e.preventDefault(); 
 
     submitButton.disabled = true;
     submitButton.textContent = 'Submitting...';
 
-    // Create a FormData object from the form
     const formData = new FormData(form);
     const data = {};
-    // The Apps Script expects a plain JSON object, so we convert FormData
     formData.forEach((value, key) => {
         data[key] = value;
     });
 
-    // Send the data to the Google Apps Script
+    // --- UPDATED FETCH REQUEST ---
+    // This new version properly handles the cross-origin request and response.
     fetch(SCRIPT_URL, {
         method: 'POST',
-        mode: 'no-cors', // Important for sending to Google Scripts
-        cache: 'no-cache',
-        headers: {
-            'Content-Type': 'application/json'
-        },
         body: JSON.stringify(data) 
     })
-    .then(res => {
+    .then(response => {
+        if (!response.ok) {
+            // If the server response is not OK (e.g., 404 or 500), throw an error.
+            throw new Error('Network response was not ok');
+        }
+        return response.json(); // We expect a JSON response from the Google Script.
+    })
+    .then(data => {
+        console.log('Success:', data); // Log the success response from the script.
+        
         // Show the thank you message
         form.classList.add('hidden');
         thankYouMessage.classList.remove('hidden');
@@ -67,11 +68,12 @@ form.addEventListener('submit', (e) => {
             thankYouMessage.classList.add('hidden');
         }, 5000); // Reset after 5 seconds
     })
-    .catch(err => {
-        // Handle errors
-        console.error('Error:', err);
-        alert('An error occurred. Please try again.');
+    .catch(error => {
+        // Handle any errors that occurred during the fetch.
+        console.error('Error:', error);
+        alert('An error occurred while submitting. Please try again.');
         submitButton.disabled = false;
         submitButton.textContent = 'Submit Feedback';
     });
 });
+
