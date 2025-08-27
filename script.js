@@ -1,8 +1,8 @@
 // --- PASTE YOUR GOOGLE APPS SCRIPT URL HERE ---
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby9qaY9tINqeZEIFYjxrl4f8CSnHHJV3MFFnV7thNvxOJz9sfs1V3VMbysYR6k3GDO2/exec'; 
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby6MEVlXsRty0pCXpz8eyURksvQb7CY9F_BQKXQ_wnVmbUToNPlVIp8FYVjQ6W23CAL/exec'; 
 
 // Get the form and other elements from the HTML
-const form = document.getElementById('ekin-event-feedback-infocomm2025');
+const form = document.getElementById('feedback-form');
 const submitButton = document.getElementById('submit-btn');
 const formContainer = document.querySelector('.form-container');
 const thankYouMessage = document.getElementById('thank-you-message');
@@ -74,6 +74,4 @@ form.addEventListener('submit', (e) => {
         submitButton.disabled = false;
         submitButton.textContent = 'Submit Feedback';
     });
-
 });
-
