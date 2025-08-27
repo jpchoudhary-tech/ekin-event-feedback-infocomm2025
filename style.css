@@ -1,35 +1,59 @@
 /* General body styling */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #f4f7f6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     margin: 0;
-    -webkit-tap-highlight-color: transparent; /* Disable tap highlight on touch devices */
+    padding: 40px 20px;
+    min-height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    /* Arrange items vertically */
+    flex-direction: column; 
+    /* Center items horizontally */
+    align-items: center; 
+    -webkit-tap-highlight-color: transparent;
 }
+
+/* Logo Header Styling - NEW */
+.logo-header {
+    width: 100%;
+    max-width: 900px; /* Match the form's max-width for alignment */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    margin-bottom: 30px; /* Space between logos and form */
+    box-sizing: border-box;
+}
+
+.logo {
+    max-height: 60px; /* Control the logo size */
+    width: auto;
+}
+/* End of New Styling */
 
 /* Container for the form */
 .form-container {
-    background: #ffffff;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
     padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    width: 90%;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    width: 100%;
     max-width: 800px;
     text-align: center;
 }
 
 header h1 {
-    font-size: 3rem; /* Larger font for kiosk */
+    font-size: 2.8rem;
     color: #333;
+    font-weight: 700;
     margin-bottom: 10px;
 }
 
 header p {
-    font-size: 1.5rem; /* Larger font for kiosk */
-    color: #666;
+    font-size: 1.4rem;
+    color: #555;
     margin-bottom: 30px;
 }
 
@@ -40,11 +64,11 @@ form {
 }
 
 label {
-    font-size: 1.4rem; /* Larger font for kiosk */
-    color: #555;
+    font-size: 1.3rem;
+    color: #444;
     text-align: left;
     margin-bottom: 8px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 input[type="text"],
@@ -55,55 +79,73 @@ select {
     padding: 18px;
     margin-bottom: 25px;
     border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 1.5rem; /* Larger font for kiosk */
-    box-sizing: border-box; /* Important for padding */
+    border-radius: 12px;
+    font-size: 1.4rem;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.25);
 }
 
 /* Style for the submit button */
 button[type="submit"] {
-    background-color: #007bff;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     padding: 20px;
     border: none;
-    border-radius: 8px;
-    font-size: 1.8rem; /* Larger font for kiosk */
+    border-radius: 12px;
+    font-size: 1.6rem;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
     margin-top: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 button[type="submit"]:hover {
-    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
 
 button[type="submit"]:disabled {
-    background-color: #cccccc;
+    background: #cccccc;
     cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
 }
-
 
 /* Star Rating Styling */
 .star-rating {
     display: flex;
     justify-content: center;
     margin-bottom: 30px;
-    direction: ltr; /* Ensure stars are left-to-right */
 }
 
 .star {
-    font-size: 4rem; /* Big stars for touch */
+    font-size: 3.5rem;
     color: #ddd;
     cursor: pointer;
     padding: 0 10px;
-    transition: color 0.2s;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.star:hover {
+    transform: scale(1.2);
 }
 
 .star.selected,
-.star:hover,
-.star:hover ~ .star {
+.star-rating:hover .star:hover,
+.star-rating:hover .star:hover ~ .star {
     color: #ffc107;
+}
+
+.star-rating:hover .star {
+    color: #ffdd7a;
 }
 
 /* Thank you message styling */
@@ -111,16 +153,12 @@ button[type="submit"]:disabled {
     display: none;
 }
 
-#thank-you-message {
-    padding: 40px;
-}
-
 #thank-you-message h2 {
-    font-size: 3.5rem;
-    color: #28a745;
+    font-size: 3rem;
+    color: #764ba2;
 }
 
 #thank-you-message p {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: #333;
 }
