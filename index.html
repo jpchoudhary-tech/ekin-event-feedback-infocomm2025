@@ -11,66 +11,70 @@
 </head>
 <body>
 
-    <div class="logo-header">
-        <img src="ekin-logo.png" alt="EKIN Logo" class="logo">
-        <img src="infocomm-logo.png" alt="InfoComm India Logo" class="logo">
-    </div>
-    <div class="form-container">
-        <header>
-            <h1>Welcome to EKIN Event</h1>
-            <p>Your feedback is valuable to us!</p>
-        </header>
+    <main class="page-container">
 
-        <form id="feedback-form">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="Name" required>
+        <img src="ekin-logo.png" alt="EKIN Logo" class="side-logo">
 
-            <label for="mobile">Mobile Number</label>
-            <input type="tel" id="mobile" name="MobileNumber" required>
+        <div class="form-container">
+            <header>
+                <h1>Welcome to EKIN Event</h1>
+                <p>Your feedback is valuable to us!</p>
+            </header>
 
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="Email" required>
+            <form id="feedback-form">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="Name" required>
 
-            <label for="city">City</label>
-            <input type="text" id="city" name="City" required>
+                <label for="mobile">Mobile Number</label>
+                <input type="tel" id="mobile" name="MobileNumber" required>
 
-            <label for="product">Which product/solution did you like most?</label>
-            <select id="product" name="LikedProduct" required>
-                <option value="" disabled selected>-- Please select an option --</option>
-                <option value="Product A">Product A</option>
-                <option value="Solution B">Solution B</option>
-                <option value="Service C">Service C</option>
-                <option value="Other">Other</option>
-            </select>
-            
-            <label>How interested are you in our solutions?</label>
-            <div class="star-rating" id="interest-level">
-                <span class="star" data-value="1">&#9733;</span>
-                <span class="star" data-value="2">&#9733;</span>
-                <span class="star" data-value="3">&#9733;</span>
-                <span class="star" data-value="4">&#9733;</span>
-                <span class="star" data-value="5">&#9733;</span>
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="Email" required>
+
+                <label for="city">City</label>
+                <input type="text" id="city" name="City" required>
+
+                <label for="product">Which product/solution did you like most?</label>
+                <select id="product" name="LikedProduct" required>
+                    <option value="" disabled selected>-- Please select an option --</option>
+                    <option value="Product A">Product A</option>
+                    <option value="Solution B">Solution B</option>
+                    <option value="Service C">Service C</option>
+                    <option value="Other">Other</option>
+                </select>
+                
+                <label>How interested are you in our solutions?</label>
+                <div class="star-rating" id="interest-level">
+                    <span class="star" data-value="1">&#9733;</span>
+                    <span class="star" data-value="2">&#9733;</span>
+                    <span class="star" data-value="3">&#9733;</span>
+                    <span class="star" data-value="4">&#9733;</span>
+                    <span class="star" data-value="5">&#9733;</span>
+                </div>
+                <input type="hidden" id="interest-level-value" name="InterestLevel" required>
+
+                <label>Overall feedback rating:</label>
+                <div class="star-rating" id="feedback-rating">
+                    <span class="star" data-value="1">&#9733;</span>
+                    <span class="star" data-value="2">&#9733;</span>
+                    <span class="star" data-value="3">&#9733;</span>
+                    <span class="star" data-value="4">&#9733;</span>
+                    <span class="star" data-value="5">&#9733;</span>
+                </div>
+                <input type="hidden" id="feedback-rating-value" name="FeedbackRating" required>
+                
+                <button type="submit" id="submit-btn">Submit Feedback</button>
+            </form>
+
+            <div id="thank-you-message" class="hidden">
+                <h2>Thank You!</h2>
+                <p>Your feedback has been submitted successfully.</p>
             </div>
-            <input type="hidden" id="interest-level-value" name="InterestLevel" required>
-
-            <label>Overall feedback rating:</label>
-            <div class="star-rating" id="feedback-rating">
-                <span class="star" data-value="1">&#9733;</span>
-                <span class="star" data-value="2">&#9733;</span>
-                <span class="star" data-value="3">&#9733;</span>
-                <span class="star" data-value="4">&#9733;</span>
-                <span class="star" data-value="5">&#9733;</span>
-            </div>
-            <input type="hidden" id="feedback-rating-value" name="FeedbackRating" required>
-            
-            <button type="submit" id="submit-btn">Submit Feedback</button>
-        </form>
-
-        <div id="thank-you-message" class="hidden">
-            <h2>Thank You!</h2>
-            <p>Your feedback has been submitted successfully.</p>
         </div>
-    </div>
+
+        <img src="infocomm-logo.png" alt="InfoComm India Logo" class="side-logo">
+
+    </main>
 
     <script src="script.js"></script>
 </body>
