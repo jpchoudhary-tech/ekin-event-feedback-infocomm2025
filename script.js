@@ -1,5 +1,5 @@
 // --- PASTE YOUR GOOGLE APPS SCRIPT URL HERE ---
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby6MEVlXsRty0pCXpz8eyURksvQb7CY9F_BQKXQ_wnVmbUToNPlVIp8FYVjQ6W23CAL/exec'; 
+const SCRIPT_URL = 'https://script.google.com/a/macros/ensonic.in/s/AKfycbxbk90cEAZkexlJROo34r3z7x82sAzw2Cmnx7ASUSq48y8JwoxynqnDZBBEgU20TB1TYg/exec'; 
 
 // Get the form and other elements from the HTML
 const form = document.getElementById('feedback-form');
@@ -76,4 +76,5 @@ form.addEventListener('submit', (e) => {
         submitButton.textContent = 'Submit Feedback';
     });
 });
+
 
